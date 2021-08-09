@@ -1,11 +1,20 @@
-const express = require("express");       //Express
-var bodyParser = require("body-parser");  //BodyParser
-const database = require("./database");   //Database
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+var bodyParser = require("body-parser");
+const database = require("./database");
 
 //Initialize express and bodyParser
 const booky = express();
 booky.use(bodyParser.urlencoded({extended: true}));
 booky.use(bodyParser.json());
+
+mongoose.connect (process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+}).then(() => console.log("Connection is established"));
 
 /*
 = = = = = GET = = = = GET = = = = = GET = = = = = GET = = = = = GET = = = = =
