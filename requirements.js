@@ -35,7 +35,7 @@
 |===============================================|
 | _/   get all publications                     |
 | _/   get a specific publication based on name |
-| _/   get a list of publications based on book |
+| _/   get a list of publications based on isbn |
 |===============================================|
 
 
